@@ -1,7 +1,7 @@
 # Playerlytics Player
 Playerlytics is a player polymer component wrapper 
 
-on npm: https://www.npmjs.com/package/playerlytics-player
+on npm: https://www.npmjs.com/package/polymer-playerlytics
 on github: https://github.com/OlympusatDevelopment/polymer-playerlytics
 
 ## Getting started
