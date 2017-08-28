@@ -1,6 +1,9 @@
 # Playerlytics Player
 Playerlytics is a player polymer component wrapper 
 
+on npm: https://www.npmjs.com/package/playerlytics-player
+on github: https://github.com/OlympusatDevelopment/polymer-playerlytics
+
 ## Getting started
 1. From Command Line run `npm i -S polymer-playerlytics`
 2. If you're installing thi sin WordPRess, just install it in your theme folder. You may have to `npm init` there if you don't already have a package.json file set up.
