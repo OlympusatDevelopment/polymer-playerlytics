@@ -14,16 +14,16 @@ Everything you need is in this package to make it easier to use in non-bower pro
 
 1. In your ```<head>``` tag, add this for regular sites: 
 ```
-    <script src="node_modules/playerlytics-player/src/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="node_modules/polymer-playerlytics/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <link href="node_modules/playerlytics-player/src/playerlytics-player.html" rel="import">
+    <link href="node_modules/polymer-playerlytics/playerlytics-player.html" rel="import">
 ```
 
 And this on WordPress sites (in header.php):
 ```
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/playerlytics-player/src/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/polymer-playerlytics/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <link href="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/playerlytics-player/src/playerlytics-player.html" rel="import">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/polymer-playerlytics/playerlytics-player.html" rel="import">
 ```
 
 2. Now that we've imported the webcomponents polyfill and linked to the playerlytics-player.html file, we can use the custom component in our html files.
