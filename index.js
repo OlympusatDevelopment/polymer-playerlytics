@@ -1,3 +1,3 @@
-var collo = require('./lib/index.min.js').default;
+var playerlyticsPlayer = require('./lib/index.min.js').default;
 
-module.exports = collo;
+module.exports = playerlyticsPlayer;

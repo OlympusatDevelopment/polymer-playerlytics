@@ -1,157 +1,33 @@
-# Collo | An npm package for managing collection functions 
-(Pronounced Call-O)! 
-Super lightweight (No dependencies) utility package for dealing with in memory collections. It's like Mongoose and Lodash in one. It's like Collections Lodash [Col Lo].
-
+# Playerlytics Player
+Playerlytics is a player polymer component wrapper 
 
 ## Getting started
-1. From Command Line run `npm i -S collo`
+1. From Command Line run `npm i -S polymer-playerlytics`
+2. If you're installing thi sin WordPRess, just install it in your theme folder. You may have to `npm init` there if you don't already have a package.json file set up.
 
-
-```
-import Collo from 'collo';
-
-const myCollection = [
-    {
-        id: 1,
-        name: 'pigeon'
-    },
-    {
-        id: 2,
-        name: 'badger'
-    },
-    {
-        id: 3,
-        name: 'squirrel'
-    }
-];
-
-const collection = new Collo(myCollection);
-
-```
 
 ## Usage
-To Promisify the response : After you instantiate Collo, and before you use the api, trigger promisification. You can use chaining or you can call `collection.promisify()` by itself.
-The same is true of unpromisify.
+Everything you need is in this package to make it easier to use in non-bower projects. I think...
 
+1. In your ```<head>``` tag, add this for regular sites: 
 ```
-const collection = new Collo(myCollection);
+    <script src="node_modules/playerlytics-player/src/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
-collection
-    .promisify()
-    .list()
-    .then(items=>console.log(items))
-    .catch(err=>console.log(err));
+    <link href="node_modules/playerlytics-player/src/playerlytics-player.html" rel="import">
 ```
 
-#### New collections are Observable.
-There is a next and error fn on the instance that streams results on change or on error respectively.
+And this on WordPress sites (in header.php):
+```
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/playerlytics-player/src/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
-```
-collection
-	.subscribe(
-		res=>console.log('NEXT ',res),
-		err=>console.log('ERROR ',err)
-	);
-	
-	
-collection
-	.next(res=>console.log(res))
-	.error(err=>console.log(err));
-```
-	
-#### collection.promisify
-Promisify the responses
-
-```
-collection.promisify()
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/playerlytics-player/src/playerlytics-player.html" rel="import">
 ```
 
-#### collection.unPromisify
-Un promisify the responses. So normal returns are triggered on api calls
-
+2. Now that we've imported the webcomponents polyfill and linked to the playerlytics-player.html file, we can use the custom component in our html files.
 ```
-collection.unPromisify()
-```
-
-#### collection.getTheIndexOf
-Get the index of an item by key/value
-
-```
-const response = collection.getTheIndexOf({id:1})
-```
-
-#### collection.list
-List all the items in the collection instance
-
-```
-const response = collection.list()
+    <!-- zmSKL1B1q-c   CMNry4PE93Y -->
+    <playerlytics-player video-id="zmSKL1B1q-c" youtube></playerlytics-player> 
 ```
 
 
-#### collection.findWhere
-Pluck an item by key/value
 
-```
-const response = collection.findWhere({id:1})
-```
-
-#### collection.exists
-Return a Boolean true if the item is in the collection, or false if not
-
-```
-const response = collection.exists({id:1})
-```
-
-#### collection.insert
-Insert an item at the end of the stack. Returns the collection after mutation.
-
-```
-const response = collection.insert({
-    id: 3,
-    name: 'Paki Paki'
-})
-```
-
-#### collection.insertAtIndex
-Splice in an item at a certain index. Returns the collection after mutation
-
-```
-const response = collection.insertAtIndex({
-    id: 3,
-    name: 'Paki Paki'
-},index)
-```
-
-
-#### collection.upsert
-Super handy upsert function. If the key/value is found then the data is updated, otherwise it's pushed into the stack. Returns the collection after mutation.
-
-```
-const response = collection.upsert({id:3},{
-    id: 3,
-    name: 'Paki Paki'
-})
-```
-
-
-#### collection.updateWhere
-Update an item where the key/value match an item in the collection. Returns the collection after mutation.
-
-```
-const response = collection.updateWhere({id:2},{
-    id: 2,
-    name: 'Mama Chiggy'
-})
-```
-
-#### collection.removeWhere
-Remove an item where the key/value matches an item in the collection. Returns the collection after mutation.
-
-```
-const response = collection.removeWhere({id:3})
-```
-
-
-#### Contributions
-If you would like to contribute, find an issue, or have a feature request, create an Issue.
-Also, see CONTRIBUTORS.md for contribution instructions

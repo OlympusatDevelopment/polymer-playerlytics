@@ -1,7 +1,7 @@
 {
-  "name": "collo",
-  "version": "1.5.5",
-  "description": "A simple npm utility package for managing collection functions",
+  "name": "playerlytics-player",
+  "version": "0.0.1",
+  "description": "Playerlytics is a player polymer component wrapper",
   "keywords": [
     "npm-package",
     "package",
@@ -15,14 +15,14 @@
   ],
   "license": "MIT",
   "author": "Adam Gedney",
-  "homepage": "https://github.com/adamgedney/collo.git",
+  "homepage": "https://github.com/OlympusatDevelopment/polymer-playerlytics",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamgedney/collo.git"
+    "url": "https://github.com/OlympusatDevelopment/polymer-playerlytics"
   },
   "bugs": {
     "mail": "adam.gedney@gmail.com",
-    "url": "https://github.com/adamgedney/collo.git/issues"
+    "url": "https://github.com/OlympusatDevelopment/polymer-playerlytics/issues"
   },
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,8 @@
     "cover": "nyc --reporter=lcov --reporter=text npm run test",
     "coveralls": "nyc --reporter=lcov --reporter=text npm run test && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src test",
-    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "start" :"npm run test:watch"
   },
   "nyc": {
     "include": [
